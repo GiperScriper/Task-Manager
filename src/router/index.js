@@ -7,13 +7,24 @@ import App from '../App.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: App, name: 'dashboard' },
   { path: '/login', component: Login, name: 'login' },
+  { path: '/', component: App, name: 'dashboard', meta: { requiresAuth: true } },
 ];
 
 const router = new VueRouter({
   mode: 'history',
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    const userToken = window.localStorage.getItem('token');
+    if (userToken) {
+      next();
+    } else {
+      next({ name: 'login' });
+    }
+  }
 });
 
 export default router;
