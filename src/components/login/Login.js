@@ -1,10 +1,12 @@
 import Auth from '../auth';
 
+const data = {
+  user: { email: 'nick@gmail.com', password: 'newpassword' },
+};
+
 const Login = {
   data() {
-    return {
-      user: { email: 'nick@gmail.com', password: 'newpassword' },
-    };
+    return data;
   },
   methods: {
     submitLoginForm() {
