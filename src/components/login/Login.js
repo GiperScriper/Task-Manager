@@ -1,7 +1,7 @@
 import Auth from '../auth';
 
 const data = {
-  user: { email: 'nick@gmail.com', password: 'newpassword' },
+  user: { email: '', password: '' },
 };
 
 const Login = {
