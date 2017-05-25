@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
 
 module.exports = {
   entry: './src/main.js',
@@ -47,16 +46,11 @@ module.exports = {
         }
       },
       // {
-      //   test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-      //   loader: 'file-loader?name=fonts/[name].[ext]'
-      //     // use: [{
-      //     //   loader: 'file-loader',
-      //     //   options: {
-      //     //     name: '[name].[ext]',
-      //     //     outputPath: 'fonts',
-      //     //     publicPath: 'fonts'
-      //     //   }
-      //     // }]
+      //   test: /\.(woff2?|eot|ttf|otf)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: '[name].[ext]?[hash]'
+      //   }
       // },
     ]
   },

@@ -8,7 +8,7 @@
        url("../fonts/lato-black/Lato-Black.svg#Lato-Black") format("svg");
 }
 
-@font-face {
+/*@font-face {
   font-family: "Lato Regular";
   font-weight: normal;
   font-style: normal;
@@ -35,4 +35,4 @@
        url("../fonts/lato-bold/Lato-Bold.woff") format("woff"),
        url("../fonts/lato-bold/Lato-Bold.ttf")  format("truetype"),
        url("../fonts/lato-bold/Lato-Bold.svg#Lato-Bold") format("svg");
-}
+}*/
