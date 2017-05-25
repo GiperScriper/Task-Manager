@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+
+	margin: 0 auto;
+}
+
+.row {
+  @include flexbox;
+  flex-wrap: wrap;
+}
+
+.content-center {
+  @include center-content;
+}
+
+.center-vertical {
+  @include center-vertical;
+}

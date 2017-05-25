@@ -1,0 +1,35 @@
+button {
+	background: none;
+	border: 0;
+}
+
+.btn {
+	font-size: 1.2rem;
+	background-color: $light-blue;
+	color: $white;
+	padding: .5rem 1rem;
+	cursor: pointer;
+
+	@include transition-animation;
+
+	&:hover {
+		background-color: $deep-blue;
+	}
+}
+
+:focus::-webkit-input-placeholder {
+	color: transparent;
+	@include transition-animation
+}
+:focus::-moz-placeholde {
+	color: transparent;
+	@include transition-animation
+}
+:focus:-moz-placeholder {
+	color: transparent;
+	@include transition-animation
+}
+:focus:-ms-input-placeholder{
+	color: transparent;
+	@include transition-animation
+}

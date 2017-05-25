@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
 
 module.exports = {
   entry: './src/main.js',
@@ -8,6 +9,15 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  // plugins: [
+  //       new GoogleFontsPlugin({
+  //           fonts: [
+  //               { family: "Source Sans Pro" },
+  //               { family: "Roboto", variants: [ "400", "700italic" ] }
+  //           ]
+  //           /* ...options */
+  //       })
+  //   ],
   module: {
     rules: [
       {
@@ -35,7 +45,19 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+      },
+      // {
+      //   test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+      //   loader: 'file-loader?name=fonts/[name].[ext]'
+      //     // use: [{
+      //     //   loader: 'file-loader',
+      //     //   options: {
+      //     //     name: '[name].[ext]',
+      //     //     outputPath: 'fonts',
+      //     //     publicPath: 'fonts'
+      //     //   }
+      //     // }]
+      // },
     ]
   },
   resolve: {
@@ -52,7 +74,7 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
-
+process.noDeprecation = true
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
