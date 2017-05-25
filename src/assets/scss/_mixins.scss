@@ -1,0 +1,43 @@
+@mixin flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin inline-flex {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+@mixin center-content {
+  justify-content: center;
+}
+
+@mixin center-vertical {
+  align-items: center;
+}
+
+@mixin transition-animation {
+  transition: 0.2s ease-in
+}
+
+
+@keyframes animate-photo {
+  0% {
+    box-shadow: 0px 0px 0px 15px transparentize($white, .91), 0px 0px 0px 30px transparentize($white, .92);
+  }
+  25% {
+    box-shadow: 0px 0px 0px 8px transparentize($white, .91), 0px 0px 0px 18px transparentize($white, .92);
+  }
+  70% {
+    box-shadow: 0px 0px 0px 13px transparentize($white, .91), 0px 0px 0px 25px transparentize($white, .92);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 15px transparentize($white, .91), 0px 0px 0px 30px transparentize($white, .92);
+  }
+}
