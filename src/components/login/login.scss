@@ -1,5 +1,6 @@
 @import '../../assets/scss/_build.scss';
 
+
 main {
   @include flexbox;
   align-items: center;
@@ -47,8 +48,10 @@ main {
   }
 
   &-input {
-    font-size: 1.2rem;
-    padding: .5rem;
+    font-size: 1rem;
+    font-family: Lato;
+    font-weight: 300;
+    padding: .8rem .5rem;
     width: 100%;
     max-width: calc(100% - 25px);
     border-radius: 4px;
@@ -70,5 +73,8 @@ main {
   max-width: calc(100% - 25px);
   border-radius: 4px;
   margin-top: 1rem;
-
+  padding: .8rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Lato;
 }
