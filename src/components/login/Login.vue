@@ -43,9 +43,4 @@
 </template>
 
 <script src="./Login.js"></script>
-<<<<<<< HEAD
-<style lang="scss" scoped src="./login.scss">
-</style>
-=======
 <style lang="scss" src="./login.scss"></style>
->>>>>>> 21f1eb2edd24caec17710f11b87fda6b6f40326a
