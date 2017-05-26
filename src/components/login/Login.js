@@ -2,6 +2,7 @@ import Auth from '../auth';
 
 const data = {
   user: { email: '', password: '' },
+  error: { message: '' },
 };
 
 const Login = {
