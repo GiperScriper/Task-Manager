@@ -49,8 +49,7 @@ main {
 
   &-input {
     font-size: 1rem;
-    font-family: Lato;
-    font-weight: 300;
+    font-family: "Lato Light";
     padding: .8rem .5rem;
     width: 100%;
     max-width: calc(100% - 25px);
@@ -73,4 +72,5 @@ main {
   max-width: calc(100% - 25px);
   border-radius: 4px;
   margin-top: 1rem;
+  font-family: "Lato Light";
 }

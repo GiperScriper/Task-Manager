@@ -8,10 +8,10 @@
             <img src="../../assets/logo.png" alt="logo" class="form-logo">
           </div>
           <div class="form-group">
-            <input type="email" class="form-input" v-model="user.email" placeholder="type your email">
+            <input type="email" class="form-input" v-model="user.email" placeholder="username or email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-input" v-model="user.password" placeholder="type your password">
+            <input type="password" class="form-input" v-model="user.password" placeholder="password">
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-block">Login</button>
