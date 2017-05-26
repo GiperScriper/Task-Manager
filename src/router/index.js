@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 
 import Login from '../components/login/Login.vue';
 import Dashboard from '../components/dashboard/Dashboard.vue';
-// import App from '../App.vue';
 
 Vue.use(VueRouter);
 
