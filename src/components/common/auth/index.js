@@ -7,6 +7,7 @@ class Auth {
           console.log('user', response.body.user);
           // save token local storage
           window.localStorage.setItem('token', token);
+          ctx.error.message = '';
           ctx.$router.push({ name: 'dashboard' });
         })
         .catch((error) => {

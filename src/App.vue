@@ -1,6 +1,7 @@
 <template>
 <div>
-  <h1>Dashboard here</h1>
+  <!-- TODO: menu and header components -->
+  <router-view></router-view>
 </div>
 </template>
 
