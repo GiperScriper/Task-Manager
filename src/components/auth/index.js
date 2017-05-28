@@ -11,6 +11,7 @@ class Auth {
         })
         .catch((error) => {
           console.log('error', error);
+          ctx.error.message = 'email or password are invalid';
         });
   }
 }
