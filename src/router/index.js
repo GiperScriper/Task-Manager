@@ -7,9 +7,21 @@ import Dashboard from '../components/dashboard/Dashboard.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/login', component: Login, name: 'login' },
-  { path: '/', component: Dashboard, name: 'dashboard', meta: { requiresAuth: true } },
-  { path: '*', redirect: '/' },
+  {
+    path: '/login',
+    component: Login,
+    name: 'login',
+  },
+  {
+    path: '/',
+    component: Dashboard,
+    name: 'dashboard',
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '*',
+    redirect: '/',
+  },
 ];
 
 const router = new VueRouter({
