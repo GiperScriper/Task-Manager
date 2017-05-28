@@ -2,7 +2,7 @@
 <div>
   <!-- Search Component -->
   <div>
-    <search v-if="user.isAuthenticated"></search>
+    <search v-if="user.isAuthenticated && mainAppView"></search>
   </div>
   <!-- /Search Component-->
 

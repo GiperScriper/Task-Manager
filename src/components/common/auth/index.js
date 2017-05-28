@@ -16,10 +16,13 @@ class Auth {
         });
   }
 
-  static getCurrentUser() {
-    //  ctx.$http.post('http://localhost:3000/users/current')
-    //   .then()
-    //   .catch()
+  static getCurrentUser(ctx) {
+    ctx.$http.get('http://localhost:3000/users/current')
+    .then((response) => {
+      ctx.$store.commit('setUserIsAuthenticated');
+      console.log('current user response', response.body);
+    })
+    .catch((error) => {});
   }
 
 }

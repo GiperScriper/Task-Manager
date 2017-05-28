@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import store from '../store';
+
 import Login from '../components/login/Login.vue';
 import Dashboard from '../components/dashboard/Dashboard.vue';
 
@@ -30,6 +32,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  store.commit('setCurrentState', to);
   if (to.meta.requiresAuth) {
     const userToken = window.localStorage.getItem('token');
     if (userToken) {
