@@ -8,13 +8,14 @@
        url("../fonts/lato-black/Lato-Black.svg#Lato-Black") format("svg");
 }
 
-/*@font-face {
+@font-face {
   font-family: "Lato Regular";
   font-weight: normal;
   font-style: normal;
-  src: url(url('assets/fonts/{fontname}')) format("eot"),
-       url(url('assets/fonts/{fontname}')) format("woff"),
-       url(url('assets/fonts/{fontname}'))  format("truetype"), url(url('assets/fonts/{fontname}')) format("svg");
+  src: url("../fonts/lato-regular/Lato-Regular.eot?") format("eot"),
+       url("../fonts/lato-regular/Lato-Regular.woff") format("woff"),
+       url("../fonts/lato-regular/Lato-Regular.ttf")  format("truetype"), 
+       url("../fonts/lato-regular/Lato-Regular.svg#Lato-Regular") format("svg");
 }
 
 @font-face {
@@ -35,4 +36,4 @@
        url("../fonts/lato-bold/Lato-Bold.woff") format("woff"),
        url("../fonts/lato-bold/Lato-Bold.ttf")  format("truetype"),
        url("../fonts/lato-bold/Lato-Bold.svg#Lato-Bold") format("svg");
-}*/
+}
