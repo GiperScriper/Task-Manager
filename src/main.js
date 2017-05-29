@@ -5,6 +5,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import Auth from './components/common/auth';
+
 Vue.use(VueResource);
 
 Vue.http.interceptors.push((request, next) => {
@@ -14,8 +16,7 @@ Vue.http.interceptors.push((request, next) => {
   }
   next((response) => {
     if (response.status === 401) {
-      window.localStorage.removeItem('token');
-      router.push('login');
+      Auth.logout(router);
     }
   });
 });

@@ -4,7 +4,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  user: {},
+  user: {
+    isAuthenticated: '',
+    data: '',
+  },
   currentState: '',
 };
 
@@ -15,13 +18,20 @@ const getters = {
 
 const mutations = {
   setUser(state, data) {
-    state.user = data;
+    state.user.data = data;
   },
   setCurrentState(state, currentState) {
     state.currentState = currentState;
   },
-  setUserIsAuthenticated(state) {
+  signIn(state) {
     state.user.isAuthenticated = true;
+  },
+};
+
+const actions = {
+  setUser({ commit }, payload) {
+    commit('signIn');
+    commit('setUser', payload);
   },
 };
 
@@ -29,6 +39,7 @@ const store = new Vuex.Store({
   state,
   getters,
   mutations,
+  actions,
 });
 
 export default store;
