@@ -27,5 +27,4 @@
 </template>
 
 <script src="./Login.js"></script>
-<style lang="scss" src="./login.scss" scoped>
-</style>
+<style lang="scss" src="./login.scss" scoped></style>

@@ -1,5 +1,5 @@
-import Search from './components/common/search/Search.vue';
-import Auth from './components/common/auth';
+import Search from '../common/search/Search.vue';
+import Auth from '../common/auth';
 
 const App = {
   beforeCreate() {

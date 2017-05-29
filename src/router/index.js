@@ -5,6 +5,7 @@ import store from '../store';
 
 import Login from '../components/login/Login.vue';
 import Dashboard from '../components/dashboard/Dashboard.vue';
+import Project from '../components/project/Project.vue';
 
 Vue.use(VueRouter);
 
@@ -15,14 +16,20 @@ const routes = [
     name: 'login',
   },
   {
-    path: '/',
+    path: '/dashboard',
     component: Dashboard,
     name: 'dashboard',
     meta: { requiresAuth: true },
   },
   {
+    path: '/projects',
+    component: Project,
+    name: 'projects',
+    meta: { requiresAuth: true },
+  },
+  {
     path: '*',
-    redirect: '/',
+    redirect: '/dashboard',
   },
 ];
 
