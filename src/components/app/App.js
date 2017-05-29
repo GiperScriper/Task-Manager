@@ -1,3 +1,4 @@
+import NavMenu from '../common/menu/Menu.vue';
 import Search from '../common/search/Search.vue';
 import Auth from '../common/auth';
 
@@ -23,6 +24,7 @@ const App = {
     },
   },
   components: {
+    NavMenu,
     Search,
   },
 };

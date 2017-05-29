@@ -1,22 +1,14 @@
 <template>
 <div>
   <!-- Search Component -->
-  <div>
-    <search v-if="user.isAuthenticated && mainAppView"></search>
+  <div v-if="user.isAuthenticated && mainAppView">
+    <search></search>
   </div>
   <!-- /Search Component-->
 
   <!-- Menu Component -->
-   <div v-if="user.isAuthenticated && mainAppView">
-     <hr />
-    <ul>
-      <li>
-        <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'projects' }">Projects</router-link>
-      </li>
-    </ul>
+  <div v-if="user.isAuthenticated && mainAppView">
+    <nav-menu></nav-menu>
   </div>
   <!-- /Menu Component  -->
   <router-view></router-view>
