@@ -25,6 +25,10 @@ class Auth {
     .catch((error) => {});
   }
 
+  static IsAuthenticated() {
+    return window.localStorage.getItem('token');
+  }
+
 }
 
 export default Auth;

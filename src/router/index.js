@@ -32,7 +32,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  store.commit('setCurrentState', to);
+  store.commit('setCurrentState', to.name);
   if (to.meta.requiresAuth) {
     const userToken = window.localStorage.getItem('token');
     if (userToken) {
