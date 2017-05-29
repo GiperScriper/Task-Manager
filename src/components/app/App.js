@@ -2,7 +2,7 @@ import Search from '../common/search/Search.vue';
 import Auth from '../common/auth';
 
 const App = {
-  beforeCreate() {
+  mounted() {
     const token = Auth.IsAuthenticated();
     if (token) {
       Auth.getCurrentUser(this);

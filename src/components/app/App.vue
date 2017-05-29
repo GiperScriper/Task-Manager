@@ -19,7 +19,6 @@
     </ul>
   </div>
   <!-- /Menu Component  -->
-
   <router-view></router-view>
 </div>
 </template>

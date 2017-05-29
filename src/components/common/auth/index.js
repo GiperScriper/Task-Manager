@@ -6,7 +6,7 @@ class Auth {
           const user = response.body.user;
           // save token local storage
           window.localStorage.setItem('token', token);
-          ctx.$store.commit('signIn');
+          ctx.$store.dispatch('setUser', user);
           ctx.error.message = '';
           ctx.$router.push({ name: 'dashboard' });
         })
