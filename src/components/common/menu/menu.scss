@@ -1,3 +1,75 @@
-.router-link-active {
-    color: red;
+@import '../../../assets/scss/_build.scss';
+
+.menu {
+  width: 20%;
+  background-color: $white;
+  border-right: 1px solid rgba($black, .1);
+  position: fixed;
+  height: 100%;
+
+  &-expand {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: darken($white, 30%);
+    }
+  }
+
+  &-title {
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 .5rem;
+    color: $white;
+    font-family: "Lato Regular";
+    background: $login-bg;
+  }
+
+  &-list {
+    @include flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 2rem;
+  }
+
+  &-element {
+    flex-basis: 100%;
+  }
+
+  &-link {
+    font-family: "Lato Regular";
+    font-size: .8rem;
+    padding: .5rem 0;
+    padding-left: 2rem;
+    display: block;
+    color: $black;
+    text-decoration: none;
+    position: relative;
+    &:hover::before {
+      content: "";
+      width: 3px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: $login-bg;
+      box-shadow: 2px 0px 5px 0px rgba($light-blue, .5);
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.router-link-active::before {
+  content: "";
+  width: 3px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: $login-bg;
+  box-shadow: 2px 0px 5px 0px rgba($light-blue, .5);
+  transform: translateY(-50%);
 }

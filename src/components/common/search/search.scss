@@ -1,0 +1,54 @@
+@import '../../../assets/scss/_build.scss';
+
+.main_bar {
+	@include flexbox;
+	width: 80%;
+	float: right;
+	box-shadow: 0 4px 15px 0px rgba($black, .2);
+
+	&-search {
+		width: 70%;
+	}
+
+	&-input {
+		width: 100%;
+		height: 60px;
+		padding: 0 .5rem;
+		border: 0;
+		font-family: "Lato Regular";
+		font-size: .8rem;
+		&:focus {
+			border: 0;
+			outline: 0;
+		}
+		&::placeholder {
+			color: rgba($black, .35);
+		}
+	}
+	&-profile {
+		@include flexbox;
+		justify-content: flex-end;
+		align-items: center;
+		width: 30%;
+		padding: 0 .5rem;
+	}
+}
+
+.profile {
+	&-wrapper {
+		@include flexbox;
+		align-items: center;
+	}
+	&-photo {
+		border-radius: 50%;
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 3px solid rgba($black, .35);
+	}
+	&-name {
+		font-family: "Lato Black";
+		color: rgba($black, .55);
+		font-size: .6rem;
+		margin: 0 .2rem;
+	}
+}

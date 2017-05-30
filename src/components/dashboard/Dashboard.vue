@@ -5,4 +5,4 @@
 </template>
 
 <script src="./Dashboard.js"></script>
-<style lang="scss" scoped></style>
+<style lang="scss" src="./dashboard.scss" scoped></style>

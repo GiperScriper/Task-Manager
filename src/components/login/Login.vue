@@ -17,7 +17,7 @@
             <button type="submit" class="btn btn-block" :disabled="!user.password && !user.email">Login</button>
           </div>
           <!-- TO-DO: style & layout -->
-          <p v-if="error.message" v-text="error.message"></p>
+          <p class="login-error" v-if="error.message" v-text="error.message"></p>
         </form>
 
       </div>
