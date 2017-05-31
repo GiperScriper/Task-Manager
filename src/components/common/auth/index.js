@@ -1,6 +1,8 @@
+import urls from '../../../config';
+
 class Auth {
   static login(ctx, credentials) {
-    ctx.$http.post('http://localhost:3000/users/login', credentials)
+    ctx.$http.post(urls.login, credentials)
         .then((response) => {
           const token = response.body.token;
           const user = response.body.user;
@@ -16,7 +18,7 @@ class Auth {
   }
 
   static getCurrentUser(ctx) {
-    ctx.$http.get('http://localhost:3000/users/current')
+    ctx.$http.get(urls.currentUser)
     .then((response) => {
       ctx.$store.dispatch('setUser', response.body);
     })

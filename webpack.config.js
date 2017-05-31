@@ -8,15 +8,6 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
-  // plugins: [
-  //       new GoogleFontsPlugin({
-  //           fonts: [
-  //               { family: "Source Sans Pro" },
-  //               { family: "Roboto", variants: [ "400", "700italic" ] }
-  //           ]
-  //           /* ...options */
-  //       })
-  //   ],
   module: {
     rules: [
       {

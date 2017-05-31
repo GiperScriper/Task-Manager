@@ -16,4 +16,6 @@
 </template>
 
 <script src="./App.js"></script>
-<style lang="scss" src="./app.scss" scoped></style>
+<style lang="css">
+  @import '../../assets/css/reset.css';
+</style>

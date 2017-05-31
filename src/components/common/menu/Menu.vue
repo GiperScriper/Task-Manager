@@ -11,12 +11,6 @@
       <li class="menu-element">
         <router-link class="menu-link" :to="{ name: 'projects' }">Projects</router-link>
       </li>
-      <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'projects' }">Profile</router-link>
-      </li>
-      <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'projects' }">Chat</router-link>
-      </li>
     </ul>
   </div>
 </div>
