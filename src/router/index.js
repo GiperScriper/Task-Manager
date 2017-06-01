@@ -12,19 +12,19 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/login',
-    component: Login,
     name: 'login',
+    component: Login,
   },
   {
     path: '/dashboard',
-    component: Dashboard,
     name: 'dashboard',
+    component: Dashboard,
     meta: { requiresAuth: true },
   },
   {
     path: '/projects',
-    component: Project,
     name: 'projects',
+    component: Project,
     meta: { requiresAuth: true },
   },
   {
