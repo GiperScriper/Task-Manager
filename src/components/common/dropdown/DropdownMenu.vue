@@ -1,8 +1,9 @@
 <template>
 <div>
-  <button @click="toggleMenu" id="dropdownMenu">DROPDOWN</button>
-  <div v-if="opened" id="user-dropdown" v-click-outside="hide">
-    <ul>
+
+  <div id="dropdown-menu" v-click-outside="hide" @click="toggleMenu">
+    menu
+    <ul v-if="opened" id="user-dropdown">
       <li>
         <router-link class="menu-link" :to="{ name: 'settings' }">Settings</router-link>
       </li>

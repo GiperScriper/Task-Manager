@@ -9,6 +9,7 @@ const DropdownMenu = {
   },
   methods: {
     toggleMenu() {
+      console.log('toggle');
       this.opened = !this.opened;
     },
     hide() {
@@ -22,7 +23,7 @@ const DropdownMenu = {
     clickOutside: {
       bind(el, binding, vnode) {
         el.clickEvent = (event) => {
-          if ((event.target.id !== 'dropdownMenu' && !el.contains(event.target)) || (el.contains(event.target))) {
+          if (event.target !== el && !el.contains(event.target)) {
             vnode.context[binding.expression]();
           }
         };
