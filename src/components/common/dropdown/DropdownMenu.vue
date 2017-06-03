@@ -1,7 +1,7 @@
 <template>
 <div>
-  <button @click="toggleMenu">DROPDOWN</button>
-  <div v-if="opened" id="user-dropdown">
+  <button @click="toggleMenu" id="dropdownMenu">DROPDOWN</button>
+  <div v-if="opened" id="user-dropdown" v-click-outside="hide">
     <ul>
       <li>Profile</li>
       <li>Logout</li>

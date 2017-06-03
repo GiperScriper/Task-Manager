@@ -14,7 +14,8 @@
       "mocha": true
     },
     "globals": {
-      "window": true
+      "window": true,
+      "document": true
     },
     "rules": {
       "no-console": [
