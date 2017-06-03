@@ -1,19 +1,19 @@
 <template>
 <div>
   <!-- Menu Component -->
-  <div class="app-menu" v-if="user.isAuthenticated && mainAppView">
+  <div class="app-menu" v-if="mainAppView">
     <nav-menu></nav-menu>
   </div>
   <!-- /Menu Component  -->
 
-  <div class="app-wrapper">
+  <div :class="{ 'app-wrapper': mainAppView }">
     <!-- Search Component -->
-    <div class="app-search" v-if="user.isAuthenticated && mainAppView">
+    <div class="app-search" v-if="mainAppView">
       <search></search>
     </div>
     <!-- /Search Component-->
 
-    <div class="app-area">
+    <div :class="{ 'app-area': mainAppView }">
       <router-view></router-view>
     </div>
 
