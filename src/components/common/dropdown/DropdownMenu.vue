@@ -3,8 +3,12 @@
   <button @click="toggleMenu" id="dropdownMenu">DROPDOWN</button>
   <div v-if="opened" id="user-dropdown" v-click-outside="hide">
     <ul>
-      <li>Profile</li>
-      <li>Logout</li>
+      <li>
+        <router-link class="menu-link" :to="{ name: 'settings' }">Settings</router-link>
+      </li>
+      <li>
+        <span @click="logout">Logout</span>
+      </li>
     </ul>
   </div>
 </div>
