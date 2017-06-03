@@ -6,13 +6,28 @@
   <div>
     <ul class="menu-list">
       <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'dashboard' }">Dashboard</router-link>
+        <router-link class="menu-link" :to="{ name: 'dashboard' }">
+          <icon name="list" class="menu-icon" scale=".9"></icon>
+            Dashboard
+        </router-link>
       </li>
       <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'projects' }">Projects</router-link>
+        <router-link class="menu-link" :to="{ name: 'projects' }">
+          <icon name="file-text-o" class="menu-icon" scale=".9"></icon>
+            Projects
+        </router-link>
       </li>
       <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'settings' }">Settings</router-link>
+        <router-link class="menu-link" :to="{ name: 'settings' }">
+          <icon name="tasks" class="menu-icon" scale=".9"></icon>
+            Tasks
+        </router-link>
+      </li>
+      <li class="menu-element">
+        <router-link class="menu-link" :to="{ name: 'settings' }">
+          <icon name="cog" class="menu-icon" scale=".9"></icon>
+            Settings
+        </router-link>
       </li>
     </ul>
   </div>

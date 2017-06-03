@@ -36,37 +36,42 @@
   }
 
   &-link {
+    // @include flexbox;
+    // align-items: center;
     font-family: "Lato Bold";
     color: $light-grey;
     font-size: .9rem;
     text-transform: uppercase;
-    padding: .5rem 0;
-    padding-left: 2rem;
+    padding: .7rem 0;
+    padding-left: 3rem;
     display: block;
     text-decoration: none;
     position: relative;
-    &:hover::before {
-      content: "";
-      width: 3px;
-      height: 25px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      background: $login-bg;
-      box-shadow: 2px 0px 5px 0px rgba($light-blue, .5);
-      transform: translateY(-50%);
+    &:hover {
+      color: $light-blue;
     }
+  }
+
+  &-icon {
+    font-size: .8rem;
+    color: $light-grey;
+    position: absolute;
+    left: 25px;
   }
 }
 
-.router-link-active::before {
-  content: "";
-  width: 3px;
-  height: 25px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background: $login-bg;
-  box-shadow: 2px 0px 5px 0px rgba($light-blue, .5);
-  transform: translateY(-50%);
+.router-link-active {
+  color: $light-blue;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: $login-bg;
+    box-shadow: 0px 0px 2px 1px rgba($light-blue, .5);
+    transform: translateY(-50%);
+  }
 }
