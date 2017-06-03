@@ -8,9 +8,8 @@
     <div class="main_bar-profile">
       <div class="profile-wrapper">
         <img src="../../../assets/img/profile/profile-photo.jpg" alt="" class="profile-photo">
-        <span class="profile-name">K. Martynov</span>
       </div>
-      <dropdown-menu></dropdown-menu>
+      <dropdown-menu class="main_bar-dropdown"></dropdown-menu>
     </div>
 
   </div>

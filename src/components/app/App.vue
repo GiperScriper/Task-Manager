@@ -1,21 +1,26 @@
 <template>
 <div>
-  <!-- Search Component -->
-  <div v-if="user.isAuthenticated && mainAppView">
-    <search></search>
-  </div>
-  <!-- /Search Component-->
-
   <!-- Menu Component -->
-  <div v-if="user.isAuthenticated && mainAppView">
+  <div class="app-menu" v-if="user.isAuthenticated && mainAppView">
     <nav-menu></nav-menu>
   </div>
   <!-- /Menu Component  -->
-  <router-view></router-view>
+
+  <div class="app-wrapper">
+    <!-- Search Component -->
+    <div class="app-search" v-if="user.isAuthenticated && mainAppView">
+      <search></search>
+    </div>
+    <!-- /Search Component-->
+
+    <div class="app-area">
+      <router-view></router-view>
+    </div>
+
+  </div>
 </div>
 </template>
 
 <script src="./App.js"></script>
-<style lang="css">
-  @import '../../assets/css/reset.css';
-</style>
+<style lang="scss" src="../../assets/scss/reset.scss"></style>
+<style lang="scss" src="./app.scss"></style>

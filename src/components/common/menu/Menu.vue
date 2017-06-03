@@ -1,7 +1,7 @@
 <template>
 <div class="menu">
   <div class="menu-title">
-    <span>Task Manager</span><a href="" class="menu-expand">&#9776</a>
+    <span>Task Manager</span><button class="menu-expand">&#9776</button>
   </div>
   <div>
     <ul class="menu-list">

@@ -1,0 +1,21 @@
+@import '../../assets/scss/_build.scss';
+
+.app {
+	&-menu {
+		min-width: 150px;
+		max-width: 200px;
+		background-color: $white;
+		border-right: 1px solid rgba($black, .1);
+		position: fixed;
+		height: 100%;
+	}
+
+	&-wrapper {
+		width: calc(100% - 200px);
+		float: right;
+	}
+	
+	&-area {
+		padding: 1rem;
+	}
+}

@@ -1,0 +1,63 @@
+@import '../../../assets/scss/_build.scss';
+
+.dropdown {
+
+	&-menu {
+		position: relative;
+	}
+
+	&-name {
+		@include flexbox;
+		align-items: center;
+
+		font-size: 1rem;
+		color: $light-grey;
+		cursor: pointer;
+
+		margin-left: 10px;
+
+		@include transition-animation;
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			transform: rotate(45deg);
+			margin: 0 10px;
+			border-left: none;
+		  border-top: none;
+		  border-right: 3px $light-grey solid;
+		  border-bottom: 3px $light-grey solid;
+			@include transition-animation;
+		}
+
+		&:hover,
+		&:hover::after {
+			color: $light-blue;
+			border-color: $light-blue;
+		}
+
+	}
+
+	&-list {
+		position: absolute;
+		top: 38px;
+		left: 10%;
+		background-color: $white;
+		padding: 1rem .5rem;
+		box-shadow: 0px 1px 5px 1px rgba($black, .2);
+
+	}
+
+	&-item {
+		margin: .5rem 0;
+	}
+
+	&-link {
+		padding: .5rem 0;
+		&:hover {
+			color: $light-blue;
+		}
+	}
+}
