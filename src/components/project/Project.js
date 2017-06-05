@@ -11,13 +11,18 @@ async function getProjects(ctx) {
 
 
 const Project = {
+  mounted() {
+    getProjects(this);
+  },
   data() {
     return {
       projects: [],
     };
   },
-  mounted() {
-    getProjects(this);
+  filters: {
+    date() {
+      return '1111';
+    },
   },
 };
 

@@ -1,16 +1,17 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 
+import Icon from 'vue-awesome/components/Icon.vue';
+import 'vue-awesome/icons';
+
 import App from './components/app/App.vue';
 import router from './router';
 import store from './store';
 
 import Auth from './components/common/auth';
 
-import 'vue-awesome/icons';
-import Icon from 'vue-awesome/components/Icon.vue';
-Vue.component('icon', Icon);
 
+Vue.component('icon', Icon);
 Vue.use(VueResource);
 
 Vue.http.interceptors.push((request, next) => {

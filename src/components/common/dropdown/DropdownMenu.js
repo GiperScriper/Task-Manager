@@ -9,7 +9,6 @@ const DropdownMenu = {
   },
   methods: {
     toggleMenu() {
-      console.log('toggle');
       this.opened = !this.opened;
     },
     hide() {
