@@ -1,5 +1,9 @@
 @import '../../assets/scss/_build.scss';
 
+body {
+	background-color: $body-bg;
+}
+
 .app {
 	&-menu {
 		min-width: 150px;
@@ -12,10 +16,10 @@
 
 	&-wrapper {
 		width: calc(100% - 200px);
-		float: right;
+		margin-left: 200px;
 	}
 
 	&-area {
-		padding: 1rem;
+		padding: 2rem 1rem;
 	}
 }

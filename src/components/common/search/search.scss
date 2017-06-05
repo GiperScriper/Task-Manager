@@ -2,58 +2,66 @@
 
 .main_bar {
 	@include flexbox;
-	// box-shadow: 0 4px 8px 1px rgba($black, .15);
 	position: relative;
-	border-bottom: 1px solid rgba($black, .2);
-	box-shadow: 0px 0px 6px 1px rgba($black, .15);
-	z-index: 1;
+	border-bottom: 1px solid rgba($black, .1);
 
 	&-search {
 		width: 70%;
 	}
 
 	&-input {
-		width: 100%;
-		height: 60px;
-		padding: 0 0 0 1rem;
-		border: 0;
 		font-family: "Lato Bold";
 		font-size: 1.5rem;
-		caret-color: rgba($black, .35);
 		color: rgba($black, .75);
+		caret-color: rgba($black, .35);
+
+		background-color: initial;
+		width: 100%;
+		height: 60px;
+
+		padding: 0;
+		padding-left: 1rem;
+		border: 0;
+
 		&:focus {
 			border: 0;
 			outline: 0;
 		}
+
 		&:focus::placeholder {
 			color: transparent;
 		}
+
 		&::placeholder {
-			font-size: 1rem;
 			font-family: "Lato Regular";
+			font-size: 1rem;
 			color: rgba($black, .2);
 		}
 	}
+
 	&-profile {
 		@include flexbox;
 		justify-content: flex-end;
 		align-items: center;
+
 		width: 30%;
-		padding: 0 0 0 .5rem;
+		padding: 0;
+		padding-left: .5rem;
 	}
 }
 
 .profile {
 	position: relative;
-	z-index: 1;
+
 	&-wrapper {
 		@include flexbox;
 		align-items: center;
 	}
+
 	&-photo {
 		border-radius: 50%;
-		width: 2.5rem;
-		height: 2.5rem;
 		border: 3px solid rgba($black, .35);
+		width: 45px;
+		height: 45px;
 	}
 }
