@@ -6,6 +6,7 @@
     color: $white;
     text-decoration: none;
     cursor: pointer;
+
     &:hover {
       color: darken($white, 30%);
     }
@@ -16,9 +17,11 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 .5rem;
-    color: $white;
+
     font-family: "Lato Regular";
+    color: $white;
+
+    padding: 0 .5rem;
     background: $login-bg;
   }
 
@@ -36,17 +39,18 @@
   }
 
   &-link {
-    // @include flexbox;
-    // align-items: center;
     font-family: "Lato Bold";
-    color: $light-grey;
     font-size: .9rem;
+    color: $light-grey;
     text-transform: uppercase;
+    text-decoration: none;
+
     padding: .7rem 0;
     padding-left: 3rem;
+
     display: block;
-    text-decoration: none;
     position: relative;
+
     &:hover {
       color: $light-blue;
     }
