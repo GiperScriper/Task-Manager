@@ -10,7 +10,8 @@ const DropdownMenu = {
   computed: {
     username() {
       const { firstName, lastName } = this.$store.getters.user.data;
-      return `${firstName[0].toUpperCase()}. ${lastName}`;
+      const firstNameChar = firstName ? firstName[0].toUpperCase() : '';
+      return `${firstNameChar}. ${lastName}`;
     },
   },
   methods: {

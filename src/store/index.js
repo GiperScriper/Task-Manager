@@ -6,7 +6,10 @@ Vue.use(Vuex);
 const state = {
   user: {
     isAuthenticated: '',
-    data: '',
+    data: {
+      firstName: '',
+      lastName: '',
+    },
   },
   currentState: '',
 };
