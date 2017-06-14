@@ -7,6 +7,12 @@ const DropdownMenu = {
       opened: false,
     };
   },
+  computed: {
+    username() {
+      const { firstName, lastName } = this.$store.getters.user.data;
+      return `${firstName[0].toUpperCase()}. ${lastName}`;
+    },
+  },
   methods: {
     toggleMenu() {
       this.opened = !this.opened;
