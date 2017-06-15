@@ -2,7 +2,7 @@
   "name": "task_manager",
   "description": "task manager ui client",
   "version": "0.0.1",
-  "author": "Nikolay Martynov <tty0sh@gmail.com>",
+  "author": "Nikolay Martynov <tty0sh@gmail.com>, Kirill Martynov",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -31,6 +31,8 @@
     }
   },
   "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1",
     "vue": "^2.2.1",
     "vue-awesome": "^2.3.1",
     "vue-resource": "^1.2.1",

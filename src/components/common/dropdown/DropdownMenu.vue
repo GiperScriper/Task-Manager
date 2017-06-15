@@ -1,8 +1,7 @@
 <template>
 <div>
-
   <div id="dropdown-menu" class="dropdown-menu" v-click-outside="hide" @click="toggleMenu">
-    <span class="dropdown-button dropdown-name">K. Martynov</span>
+    <span class="dropdown-button dropdown-name">{{ username }}</span>
     <ul v-if="opened" id="user-dropdown" class="dropdown-list">
       <div class="dropdown-title">
 

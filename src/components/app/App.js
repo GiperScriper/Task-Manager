@@ -7,7 +7,7 @@ const App = {
     const token = Auth.IsAuthenticated();
     if (token) {
       Auth.getCurrentUser(this);
-      this.$store.commit('signIn');
+      // this.$store.commit('signIn');
     }
   },
   data() {
@@ -16,9 +16,6 @@ const App = {
     };
   },
   computed: {
-    user() {
-      return this.$store.getters.user;
-    },
     mainAppView() {
       return this.$store.getters.currentState !== 'login';
     },
