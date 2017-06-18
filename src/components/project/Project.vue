@@ -36,7 +36,7 @@
         </div>
         <div class="card-footer card-footer--create">
           <button class="card-btn card-btn--cancel" type="button" @click="closeDeleteDialog">cancel</button>
-          <button class="card-btn" type="submit" :disabled="isConfirmed">delete</button>
+          <button class="card-btn" type="submit" :disabled="!isConfirmed">delete</button>
         </div>
       </form>
     </div>

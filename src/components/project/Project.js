@@ -21,9 +21,10 @@ async function saveProject(ctx) {
 
 async function deleteProject(ctx) {
   try {
-    const response = await ctx.$http.delete(`${urls.projects}/${ctx.currentProject._id}`);
+    await ctx.$http.delete(`${urls.projects}/${ctx.currentProject._id}`);
     const index = ctx.projects.indexOf(ctx.currentProject);
     ctx.projects.splice(index, 1);
+    ctx.currentProject = {};
     ctx.closeAddDialog();
   } catch (error) {
   // Handle error
@@ -77,7 +78,7 @@ const Project = {
       return !(!!this.project.title && !!this.project.description);
     },
     isConfirmed() {
-      return !(this.projectNameConfirmation === this.currentProject.title);
+      return this.projectNameConfirmation === this.currentProject.title;
     },
   },
   filters: {
