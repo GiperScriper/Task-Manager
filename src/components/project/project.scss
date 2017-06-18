@@ -9,9 +9,9 @@
 	@include flexbox;
 	justify-content: center;
 	flex-wrap: wrap;
-	flex-basis: 220px;
-	max-width: 220px;
-	height: 200px;
+	flex-basis: 240px;
+	max-width: 240px;
+	height: 220px;
 
 	margin: 0 25px 20px 0;
 
@@ -35,7 +35,7 @@
 
 		> div {
 			flex-grow: 1;
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 
@@ -138,6 +138,12 @@
 			}
 		}
 
+		&--add {
+			&:focus {
+				outline: 0;
+			}
+		}
+
 		&[disabled="disabled"] {
 			opacity: .5;
 			&:hover {
@@ -196,6 +202,10 @@
 		color: rgba($black, .8);
 		text-align: left;
 		position: relative;
+		// border-top-left-radius: 4px;
+		// border-top-right-radius: 4px;
+		// border-top: 3px solid $light-blue;
+		// // border-image: $login-bg;
 		border-bottom: 1px solid rgba($black, .15);
 
 		&::before {
@@ -216,7 +226,6 @@
 		font-family: Lato Black;
 		font-size: 12px;
 		color: rgba($black, .5);
-		text-transform: uppercase;
 
 		span {
 			font-family: Lato Black;
@@ -278,11 +287,6 @@
 		vertical-align: middle;
 		top: -1px;
 		margin-right: 5px;
-	}
-
-	&-users {
-		margin-right: 0;
-		margin-left: 5px;
 	}
 
 	&-members {
