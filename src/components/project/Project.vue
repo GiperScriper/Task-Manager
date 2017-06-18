@@ -19,54 +19,58 @@
       </div>
       <div class="card-footer">
         <span class="card-members"><icon name="user-circle-o" class="card-users" scale="1"></icon>{{ project.members.length }}</span>
-        <time class="card-date"><icon name="calendar" class="card-calendar" scale=".8"></icon>7 Jun, 2017</time>
+        <time class="card-date"><icon name="calendar" class="card-calendar" scale=".8"></icon>{{ project.createdAt | date(dateFormat) }}</time>
       </div>
     </div>
 
-    <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
-      <div class="card-warning">
-        <p>
-          This action <span>cannot</span> be undone. This will permanently delete the
-          <span :title="currentProject.title">{{ currentProject.title | truncate(lengthLimit) }}</span> project, tasks, and etc.
-        </p>
+    <transition name="fade">
+      <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
+        <div class="card-warning">
+          <p>
+            This action <span>cannot</span> be undone. This will permanently delete the
+            <span :title="currentProject.title">{{ currentProject.title | truncate(lengthLimit) }}</span> project, tasks, and etc.
+          </p>
+        </div>
+        <form class="card-form card-form--delete" v-on:submit.prevent="deleteProject()" novalidate>
+          <div class="card-input">
+            <label for="project-name">Please type project name:</label>
+            <input type="text" v-model="projectNameConfirmation">
+          </div>
+          <div class="card-footer card-footer--create">
+            <button class="card-btn card-btn--cancel" type="button" @click="closeDeleteDialog">cancel</button>
+            <button class="card-btn" type="submit" :disabled="!isConfirmed">delete</button>
+          </div>
+        </form>
       </div>
-      <form class="card-form card-form--delete" v-on:submit.prevent="deleteProject()" novalidate>
-        <div class="card-input">
-          <label for="project-name">Please type project name:</label>
-          <input type="text" v-model="projectNameConfirmation">
-        </div>
-        <div class="card-footer card-footer--create">
-          <button class="card-btn card-btn--cancel" type="button" @click="closeDeleteDialog">cancel</button>
-          <button class="card-btn" type="submit" :disabled="!isConfirmed">delete</button>
-        </div>
-      </form>
-    </div>
+    </transition>
 
   </div>
 
   <div class="card card-add" :class="{ 'card-add--open' : isOpenAddDialog }">
-     <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
+    <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>
 
-    <div class="card-create" v-show="isOpenAddDialog">
-      <form class="card-form" v-on:submit.prevent="createProject()" novalidate>
-        <div class="card-input">
-          <label for="project-name">Project title:</label>
-          <input type="text" v-model="project.title">
-        </div>
-        <div class="card-input">
-          <label for="project-description">Description:</label>
-          <textarea rows="5" v-model="project.description"></textarea>
-        </div>
-        <div class="card-footer card-footer--create">
-          <button class="card-btn card-btn--cancel" type="button" @click="closeAddDialog">cancel</button>
-          <button class="card-btn" type="submit" :disabled="isProjectEmpty">
-            create
-          </button>
-        </div>
-      </form>
-    </div>
+    <transition name="fade">
+      <div class="card-create" v-show="isOpenAddDialog">
+        <form class="card-form" v-on:submit.prevent="createProject()" novalidate>
+          <div class="card-input">
+            <label for="project-name">Project title:</label>
+            <input type="text" v-model="project.title">
+          </div>
+          <div class="card-input">
+            <label for="project-description">Description:</label>
+            <textarea rows="5" v-model="project.description"></textarea>
+          </div>
+          <div class="card-footer card-footer--create">
+            <button class="card-btn card-btn--cancel" type="button" @click="closeAddDialog">cancel</button>
+            <button class="card-btn" type="submit" :disabled="isProjectEmpty">
+              create
+            </button>
+          </div>
+        </form>
+      </div>
+    </transition>
   </div>
 
 </div>

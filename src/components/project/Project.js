@@ -1,3 +1,4 @@
+import moment from 'moment';
 import urls from '../../config';
 
 async function getProjects(ctx) {
@@ -46,12 +47,14 @@ const Project = {
       projectNameConfirmation: '',
       isOpenAddDialog: false,
       isOpenDeleteDialog: false,
-      lengthLimit: 35,
+      dateFormat: 'D MMM, YYYY',
+      lengthLimit: 30,
     };
   },
   methods: {
     showAddDialog() {
       this.isOpenAddDialog = true;
+      console.log('now', moment.now());
     },
     closeAddDialog() {
       this.isOpenAddDialog = false;
@@ -90,8 +93,8 @@ const Project = {
     truncate(value, limit) {
       return value.length > limit ? `${value.substring(0, limit)}...` : value;
     },
-    date() {
-      return '1111';
+    date(date, format) {
+      return moment(date).format(format);
     },
   },
 };
