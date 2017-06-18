@@ -2,7 +2,7 @@
 <div class="projects">
 
   <div class="card" v-for="project in projects">
-    <div class="card-project">
+    <div class="card-project" v-show="!(project._id === currentProject._id && isOpenDeleteDialog)">
       <div class="card-header">
         <h3>{{ project.title }}</h3>
         <div class="card-control">
@@ -23,20 +23,20 @@
       </div>
     </div>
 
-    <div class="card-delete" v-if="project._id === currentProject._id">
+    <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
       <div class="card-warning">
         <p>
           This action <span>cannot</span> be undone. This will permanently delete the <span>Project Name</span> project, tasks, and etc.
         </p>
       </div>
-      <form class="card-form card-form--delete" action="index.html" method="post">
+      <form class="card-form card-form--delete" v-on:submit.prevent="deleteProject()" novalidate>
         <div class="card-input">
           <label for="project-name">Please type project name:</label>
-          <input type="text" name="project-name" value="" id="project-name">
+          <input type="text" v-model="projectNameConfirmation">
         </div>
         <div class="card-footer card-footer--create">
-          <button class="card-btn card-btn--cancel" type="button" name="button">cancel</button>
-          <button class="card-btn" type="button" name="button">delete</button>
+          <button class="card-btn card-btn--cancel" type="button" @click="closeDeleteDialog">cancel</button>
+          <button class="card-btn" type="submit" :disabled="isConfirmed">delete</button>
         </div>
       </form>
     </div>
@@ -59,7 +59,7 @@
           <textarea rows="5" v-model="project.description"></textarea>
         </div>
         <div class="card-footer card-footer--create">
-          <button class="card-btn card-btn--cancel" type="button" name="button" @click="closeAddDialog">cancel</button>
+          <button class="card-btn card-btn--cancel" type="button" @click="closeAddDialog">cancel</button>
           <button class="card-btn" type="submit" :disabled="isProjectEmpty">
             create
           </button>

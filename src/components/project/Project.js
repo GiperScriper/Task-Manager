@@ -19,6 +19,17 @@ async function saveProject(ctx) {
   }
 }
 
+async function deleteProject(ctx) {
+  try {
+    const response = await ctx.$http.delete(`${urls.projects}/${ctx.currentProject._id}`);
+    const index = ctx.projects.indexOf(ctx.currentProject);
+    ctx.projects.splice(index, 1);
+    ctx.closeAddDialog();
+  } catch (error) {
+  // Handle error
+  }
+}
+
 const Project = {
   mounted() {
     getProjects(this);
@@ -31,6 +42,7 @@ const Project = {
         description: '',
       },
       currentProject: {},
+      projectNameConfirmation: '',
       isOpenAddDialog: false,
       isOpenDeleteDialog: false,
     };
@@ -47,12 +59,8 @@ const Project = {
       };
     },
     showDeleteDialog(project) {
-      console.log('current project', project);
       this.currentProject = project;
-      const index = this.projects.indexOf(project);
-      console.log('index', index);
-      this.projects[index].hide = true;
-      // this.isOpenDeleteDialog = true;
+      this.isOpenDeleteDialog = true;
     },
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
@@ -60,10 +68,16 @@ const Project = {
     createProject() {
       saveProject(this);
     },
+    deleteProject() {
+      deleteProject(this);
+    },
   },
   computed: {
     isProjectEmpty() {
       return !(!!this.project.title && !!this.project.description);
+    },
+    isConfirmed() {
+      return !(this.projectNameConfirmation === this.currentProject.title);
     },
   },
   filters: {
