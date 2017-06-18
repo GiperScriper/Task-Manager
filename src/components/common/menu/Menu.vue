@@ -30,6 +30,15 @@
         </router-link>
       </li>
     </ul>
+
+    <ul class="menu-list--logout">
+      <li class="menu-element">
+        <router-link class="menu-link" :to="{ name: 'settings' }">
+          <icon name="sign-out" class="menu-icon menu-icon--logout" scale=".9"></icon>
+            Logout
+        </router-link>
+      </li>
+    </ul>
   </div>
 </div>
 </template>

@@ -1,5 +1,11 @@
 @import '../../../assets/scss/_build.scss';
 
+.app-menu {
+  position: relative;
+
+
+}
+
 .menu {
   &-expand {
     font-size: 1.2rem;
@@ -32,6 +38,11 @@
     justify-content: center;
 
     margin-top: 2rem;
+
+    &--logout {
+      position: absolute;
+      bottom: 20px;
+    }
   }
 
   &-element {
@@ -51,7 +62,8 @@
     display: block;
     position: relative;
 
-    &:hover {
+    &:hover,
+    &:hover .menu-icon-logout {
       color: $light-blue;
     }
   }

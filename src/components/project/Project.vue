@@ -18,7 +18,7 @@
         <p>{{ project.description }}</p>
       </div>
       <div class="card-footer">
-        <span class="card-members">Members: {{ project.members.length }}<icon name="user-circle-o" class="card-users" scale=".8"></icon></span>
+        <span class="card-members"><icon name="user-circle-o" class="card-users" scale="1"></icon>{{ project.members.length }}</span>
         <time class="card-date"><icon name="calendar" class="card-calendar" scale=".8"></icon>7 Jun, 2017</time>
       </div>
     </div>
@@ -44,7 +44,7 @@
   </div>
 
   <div class="card card-add card-add--open">
-     <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
+     <button class="card-btn--add" type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>
 
