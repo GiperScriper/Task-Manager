@@ -43,7 +43,7 @@
 
   </div>
 
-  <div class="card card-add card-add--open">
+  <div class="card card-add" :class="{ 'card-add--open' : isOpenAddDialog }">
      <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>

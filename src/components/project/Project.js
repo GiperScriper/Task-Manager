@@ -60,12 +60,12 @@ const Project = {
       };
     },
     showDeleteDialog(project) {
+      this.projectNameConfirmation = '';
       this.currentProject = project;
       this.isOpenDeleteDialog = true;
     },
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
-      this.projectNameConfirmation = '';
     },
     createProject() {
       saveProject(this);
