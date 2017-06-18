@@ -54,7 +54,6 @@ const Project = {
   methods: {
     showAddDialog() {
       this.isOpenAddDialog = true;
-      console.log('now', moment.now());
     },
     closeAddDialog() {
       this.isOpenAddDialog = false;
