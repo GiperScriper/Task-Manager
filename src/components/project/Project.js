@@ -65,6 +65,7 @@ const Project = {
     },
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
+      this.projectNameConfirmation = '';
     },
     createProject() {
       saveProject(this);
@@ -74,6 +75,9 @@ const Project = {
     },
   },
   computed: {
+    user() {
+      return this.$store.getters.user.data;
+    },
     isProjectEmpty() {
       return !(!!this.project.title && !!this.project.description);
     },

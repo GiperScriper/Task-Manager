@@ -13,7 +13,7 @@
       </li>
       <li class="menu-element">
         <router-link class="menu-link" :to="{ name: 'projects' }">
-          <icon name="file-text-o" class="menu-icon" scale=".9"></icon>
+          <icon name="file-text" class="menu-icon" scale=".9"></icon>
             Projects
         </router-link>
       </li>

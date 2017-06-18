@@ -21,7 +21,7 @@
       "document": true
     },
     "rules": {
-      "no-underscore-dangle": [0, { "allow": [] }],
+      "no-underscore-dangle": [0],
       "no-console": [
         "error",
         {

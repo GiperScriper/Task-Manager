@@ -5,7 +5,7 @@
     <div class="card-project" v-show="!(project._id === currentProject._id && isOpenDeleteDialog)">
       <div class="card-header">
         <h3>{{ project.title }}</h3>
-        <div class="card-control">
+        <div class="card-control" v-if="project._creator === user._id">
           <button type="button" name="button">
             <icon name="pencil-square-o" class="card-edit" scale="1"></icon>
           </button>
@@ -26,7 +26,7 @@
     <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
       <div class="card-warning">
         <p>
-          This action <span>cannot</span> be undone. This will permanently delete the <span>Project Name</span> project, tasks, and etc.
+          This action <span>cannot</span> be undone. This will permanently delete the <span>{{ currentProject.title }}</span> project, tasks, and etc.
         </p>
       </div>
       <form class="card-form card-form--delete" v-on:submit.prevent="deleteProject()" novalidate>
