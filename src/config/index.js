@@ -1,4 +1,4 @@
-const domain = 'http://localhost:3000';
+const domain = 'http://192.168.1.218:3000';
 const basePrefix = '/api/v1';
 const urls = {
   users: '/users',
