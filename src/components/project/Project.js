@@ -46,6 +46,7 @@ const Project = {
       projectNameConfirmation: '',
       isOpenAddDialog: false,
       isOpenDeleteDialog: false,
+      lengthLimit: 35,
     };
   },
   methods: {
@@ -86,6 +87,9 @@ const Project = {
     },
   },
   filters: {
+    truncate(value, limit) {
+      return value.length > limit ? `${value.substring(0, limit)}...` : value;
+    },
     date() {
       return '1111';
     },
