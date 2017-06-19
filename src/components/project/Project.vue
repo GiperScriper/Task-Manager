@@ -2,7 +2,7 @@
 <div class="projects">
 
   <div class="card" v-for="project in projects">
-    <div class="card-project" v-show="!(project._id === currentProject._id && isOpenDeleteDialog)">
+    <div class="card-project" v-show="project._id !== currentProject._id">
       <div class="card-header">
         <h3 :title="project.title">{{ project.title }}</h3>
         <div class="card-control" v-if="project._creator === user._id">
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <transition name="fade">
+    <transition name="fade" v-on:after-leave="afterLeave">
       <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
         <div class="card-warning">
           <p>
@@ -47,11 +47,11 @@
   </div>
 
   <div class="card card-add" :class="{ 'card-add--open' : isOpenAddDialog }">
-    <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog">
+    <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog && isLeaveAddDialog">
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>
 
-    <transition name="fade">
+    <transition name="fade" v-on:after-leave="afterLeave">
       <div class="card-create" v-show="isOpenAddDialog">
         <form class="card-form" v-on:submit.prevent="createProject()" novalidate>
           <div class="card-input">

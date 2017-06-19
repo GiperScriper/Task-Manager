@@ -1,32 +1,32 @@
 import moment from 'moment';
 import urls from '../../config';
 
-async function getProjects(ctx) {
+async function getProjects() {
   try {
-    const response = await ctx.$http.get(urls.projects);
-    ctx.projects = response.body.data;
+    const response = await this.$http.get(urls.projects);
+    this.projects = response.body.data;
   } catch (error) {
     // Handle error
   }
 }
 
-async function saveProject(ctx) {
+async function createProject() {
   try {
-    const response = await ctx.$http.post(urls.projects, ctx.project);
-    ctx.projects.push(response.body);
-    ctx.closeAddDialog();
+    const response = await this.$http.post(urls.projects, this.project);
+    this.projects.push(response.body);
+    this.closeAddDialog();
   } catch (error) {
   // Handle error
   }
 }
 
-async function deleteProject(ctx) {
+async function deleteProject() {
   try {
-    await ctx.$http.delete(`${urls.projects}/${ctx.currentProject._id}`);
-    const index = ctx.projects.indexOf(ctx.currentProject);
-    ctx.projects.splice(index, 1);
-    ctx.currentProject = {};
-    ctx.closeAddDialog();
+    await this.$http.delete(`${urls.projects}/${this.currentProject._id}`);
+    const index = this.projects.indexOf(this.currentProject);
+    this.projects.splice(index, 1);
+    this.currentProject = {};
+    this.closeAddDialog();
   } catch (error) {
   // Handle error
   }
@@ -34,7 +34,7 @@ async function deleteProject(ctx) {
 
 const Project = {
   mounted() {
-    getProjects(this);
+    this.getProjects();
   },
   data() {
     return {
@@ -46,17 +46,26 @@ const Project = {
       currentProject: {},
       projectNameConfirmation: '',
       isOpenAddDialog: false,
+      isLeaveAddDialog: true,
       isOpenDeleteDialog: false,
       dateFormat: 'D MMM, YYYY',
       lengthLimit: 30,
     };
   },
   methods: {
+    getProjects,
+    createProject,
+    deleteProject,
+    afterLeave() {
+      this.currentProject = {};
+      this.isLeaveAddDialog = true;
+    },
     showAddDialog() {
       this.isOpenAddDialog = true;
     },
     closeAddDialog() {
       this.isOpenAddDialog = false;
+      this.isLeaveAddDialog = false;
       this.project = {
         title: '',
         description: '',
@@ -69,12 +78,6 @@ const Project = {
     },
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
-    },
-    createProject() {
-      saveProject(this);
-    },
-    deleteProject() {
-      deleteProject(this);
     },
   },
   computed: {
