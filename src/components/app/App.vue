@@ -14,7 +14,9 @@
     <!-- /Search Component-->
 
     <div :class="{ 'app-area': mainAppView }">
-      <router-view></router-view>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
     </div>
 
   </div>
