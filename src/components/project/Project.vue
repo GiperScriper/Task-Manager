@@ -6,10 +6,10 @@
       <div class="card-header">
         <h3 :title="project.title">{{ project.title }}</h3>
         <div class="card-control" v-if="project._creator === user._id">
-          <button type="button" name="button">
+          <button class="card-icon" type="button" name="button">
             <icon name="pencil-square-o" class="card-edit" scale="1"></icon>
           </button>
-          <button type="button" name="button" @click="showDeleteDialog(project)">
+          <button class="card-icon" type="button" name="button" @click="showDeleteDialog(project)">
             <icon name="trash-o" class="card-close" scale="1"></icon>
           </button>
         </div>
@@ -47,7 +47,7 @@
   </div>
 
   <div class="card card-add" :class="{ 'card-add--open' : isOpenAddDialog }">
-    <button type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog && isLeaveAddDialog">
+    <button class="card-button--create" type="button" name="showAddDialog" @click="showAddDialog" v-show="!isOpenAddDialog && isLeaveAddDialog">
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>
 

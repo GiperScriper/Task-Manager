@@ -5,6 +5,10 @@
 	flex-wrap: wrap;
 }
 
+button {
+	outline: none;
+}
+
 .card {
 	@include flexbox;
 	justify-content: center;
@@ -23,7 +27,27 @@
 
 	&:hover {
 		border-color: rgba($black, .4);
-		box-shadow: 0px 0px 8px rgba($black, .2), 0px 0px 8px rgba($black, .2);
+		box-shadow: 0px 0px 8px rgba($black, .25),
+								0px 3px 10px rgba($black, .35)
+	}
+
+	&:hover .card-icon {
+		opacity: 1;
+	}
+
+	&-icon {
+		opacity: 0;
+		@include transition-animation;
+	}
+
+	&-button {
+		&--create {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			right: 0;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	&-project {
@@ -60,6 +84,7 @@
 	}
 
 	&-add {
+		position: relative;
 		padding: 5px 15px;
 		cursor: pointer;
 
@@ -169,6 +194,7 @@
 
 	&-close,
 	&-edit {
+
 		color: #555;
 		cursor: pointer;
 		@include transition-animation;
@@ -179,7 +205,6 @@
 	}
 
 	&-edit {
-		// color: $light-blue;
 		position: absolute;
 		top: 49%;
 		transform: translateY(-50%);
@@ -198,14 +223,13 @@
 		@include flexbox;
 		justify-content: space-between;
 		align-items: center;
+
 		font-family: Lato Black;
 		color: rgba($black, .8);
 		text-align: left;
+
 		position: relative;
-		// border-top-left-radius: 4px;
-		// border-top-right-radius: 4px;
-		// border-top: 3px solid $light-blue;
-		// // border-image: $login-bg;
+
 		border-bottom: 1px solid rgba($black, .15);
 
 		&::before {
@@ -238,6 +262,7 @@
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
+
 		opacity: 0;
 		cursor: pointer;
 		@include transition-animation;
@@ -296,15 +321,12 @@
 		text-transform: uppercase;
 	}
 
-	&-delete {
-		// padding: 15px;
-	}
-
 	&-warning {
 		padding: 15px;
 
 		span {
 			font-family: Lato Black;
+
 			&:first-child {
 				text-transform: uppercase;
 			}
@@ -312,6 +334,7 @@
 	}
 
 	&-form {
+
 		&--delete {
 			padding: 10px 15px;
 
@@ -333,4 +356,3 @@
 	}
 
 }
-
