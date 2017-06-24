@@ -13,12 +13,14 @@ const state = {
   },
   currentState: '',
   isLoading: false,
+  isOpenMenu: true,
 };
 
 const getters = {
   user: state => state.user,
   currentState: state => state.currentState,
   isLoading: state => state.isLoading,
+  isOpenMenu: state => state.isOpenMenu,
 };
 
 const mutations = {
@@ -34,6 +36,9 @@ const mutations = {
   setLoading(state, flag) {
     state.isLoading = flag;
   },
+  setMenuState(state, flag) {
+    state.isOpenMenu = flag;
+  }
 };
 
 const actions = {
@@ -44,6 +49,9 @@ const actions = {
   setLoading({ commit }, payload) {
     commit('setLoading', payload);
   },
+  setMenuState({ commit }, payload) {
+    commit('setMenuState', payload);
+  }
 };
 
 const store = new Vuex.Store({

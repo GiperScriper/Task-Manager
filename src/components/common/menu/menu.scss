@@ -7,29 +7,6 @@
 }
 
 .menu {
-  &-expand {
-    font-size: 1.2rem;
-    color: $white;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-      color: darken($white, 30%);
-    }
-  }
-
-  &-title {
-    @include flexbox;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-
-    font-family: "Lato Regular";
-    color: $white;
-
-    padding: 0 .5rem;
-    background: $login-bg;
-  }
 
   &-list {
     @include flexbox;

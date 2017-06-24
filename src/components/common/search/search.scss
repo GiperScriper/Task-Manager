@@ -1,12 +1,59 @@
 @import '../../../assets/scss/_build.scss';
 
 .main_bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+
 	@include flexbox;
-	position: relative;
 	border-bottom: 1px solid rgba($black, .1);
+	border-left: 1px solid transparent;
+
+	width: 100%;
+
+	background-color: rgb(238, 238, 238);
+
+	z-index: 1030;
+
+	&-title {
+    @include flexbox;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+
+    font-family: "Lato Regular";
+    color: $white;
+
+    padding: 0 .5rem;
+    background: $login-bg;
+		min-width: 200px;
+		max-width: 200px;
+
+    span {
+      margin-top: 2px;
+      margin-left: 10px;
+    }
+  }
+
+	&-expand {
+    font-size: 1.2rem;
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+
+		&:focus {
+			outline: 0;
+		}
+
+    &:hover {
+      color: darken($white, 30%);
+    }
+	}
 
 	&-search {
-		width: 70%;
+		position: relative;
+
+		width: 60%;
 	}
 
 	&-input {
@@ -20,7 +67,7 @@
 		height: 60px;
 
 		padding: 0;
-		padding-left: 1rem;
+		padding-left: 3rem;
 		border: 0;
 
 		&:focus {
@@ -54,6 +101,7 @@
 .profile {
 	position: relative;
 
+
 	&-wrapper {
 		@include flexbox;
 		align-items: center;
@@ -65,4 +113,14 @@
 		width: 45px;
 		height: 45px;
 	}
+}
+
+.search-icon {
+		position: absolute;
+		top: 55%;
+		left: 15px;
+
+		color: rgba($black, .3);
+
+		transform: translateY(-50%);
 }
