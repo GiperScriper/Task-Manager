@@ -20,6 +20,9 @@ const App = {
     mainAppView() {
       return this.$store.getters.currentState !== 'login';
     },
+    isOpenMenu() {
+      return this.$store.getters.isOpenMenu;
+    },
   },
   components: {
     NavMenu,

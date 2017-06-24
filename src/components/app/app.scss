@@ -12,15 +12,23 @@ body {
 		border-right: 1px solid rgba($black, .1);
 		position: fixed;
 		height: 100%;
+
+		margin-top: 60px;
 	}
 
 	&-wrapper {
 		width: calc(100% - 200px);
 		margin-left: 200px;
+
+		&--full {
+			width: 100%;
+			margin-left: 0;
+		}
 	}
 
 	&-area {
-		padding: 2rem 1rem;
+		padding: 2rem;
+		padding-top: 100px;
 	}
 }
 

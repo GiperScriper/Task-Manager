@@ -1,14 +1,9 @@
 const Menu = {
-  data() {
-    return {
-      isMenuOpened: true,
-    };
-  },
-  methods: {
-    toggle() {
-      this.isMenuOpened = !this.isMenuOpened;
-    },
-  },
+  computed: {
+    isMenuOpened() {
+      return this.$store.getters.isOpenMenu;
+    }
+  }
 };
 
 export default Menu;

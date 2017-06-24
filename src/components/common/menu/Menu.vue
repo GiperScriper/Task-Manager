@@ -1,9 +1,6 @@
 <template>
-<div class="menu">
-  <div class="menu-title">
-    <span>Task Manager</span><button class="menu-expand" @click="toggle">&#9776</button>
-  </div>
-  <div v-show="isMenuOpened">
+<div class="menu" v-show="isMenuOpened">
+  <div>
     <ul class="menu-list">
       <li class="menu-element">
         <router-link class="menu-link" :to="{ name: 'dashboard' }">

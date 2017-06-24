@@ -1,12 +1,12 @@
 <template>
 <div>
   <!-- Menu Component -->
-  <div class="app-menu" v-if="mainAppView">
+  <div class="app-menu" v-if="mainAppView && isOpenMenu">
     <nav-menu></nav-menu>
   </div>
   <!-- /Menu Component  -->
 
-  <div :class="{ 'app-wrapper': mainAppView }">
+  <div :class="{ 'app-wrapper': mainAppView, 'app-wrapper--full': !isOpenMenu }">
     <!-- Search Component -->
     <div class="app-search" v-if="mainAppView">
       <search></search>
