@@ -1,5 +1,5 @@
 <template>
-<div class="projects" v-if="!loading">
+<div class="projects" v-if="!isLoading">
   <div class="card" v-for="project in projects">
     <div class="card-project" v-show="project._id !== currentProject._id">
       <div class="card-header">

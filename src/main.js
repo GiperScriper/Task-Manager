@@ -16,10 +16,18 @@ Vue.use(VueResource);
 
 Vue.http.interceptors.push((request, next) => {
   const token = window.localStorage.getItem('token');
+
   if (token) {
     request.headers.set('x-auth', token);
+    if (request.headers.map.spinner) {
+      store.dispatch('setLoading', true);
+    }
   }
+
   next((response) => {
+    if (request.url === response.url && request.headers.map.spinner) {
+      store.dispatch('setLoading', false);
+    }
     if (response.status === 401) {
       Auth.logout(router);
     }

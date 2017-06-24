@@ -3,13 +3,10 @@ import urls from '../../config';
 
 async function getProjects() {
   try {
-    this.loading = true;
-    const response = await this.$http.get(urls.projects);
+    const response = await this.$http.get(urls.projects, { headers: { spinner: 'true' } });
     this.projects = response.body.data;
   } catch (error) {
     // Handle error, show notification
-  } finally {
-    this.loading = false;
   }
 }
 
@@ -53,7 +50,6 @@ const Project = {
       isOpenDeleteDialog: false,
       dateFormat: 'D MMM, YYYY',
       lengthLimit: 30,
-      loading: false,
     };
   },
   methods: {
@@ -90,6 +86,9 @@ const Project = {
     user() {
       return this.$store.getters.user.data;
     },
+    isLoading() {
+      return this.$store.getters.isLoading;
+    },
     isProjectEmpty() {
       return !(!!this.project.title && !!this.project.description);
     },
@@ -103,11 +102,6 @@ const Project = {
     },
     date(date, format) {
       return moment(date).format(format);
-    },
-  },
-  watch: {
-    loading(loadingState) {
-      this.$store.dispatch('setLoading', loadingState);
     },
   },
 };
