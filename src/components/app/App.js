@@ -1,6 +1,7 @@
 import NavMenu from '../common/menu/Menu.vue';
 import Search from '../common/search/Search.vue';
 import Auth from '../common/auth';
+import Spinner from '../common/spinner/Spinner.vue';
 
 const App = {
   mounted() {
@@ -23,6 +24,7 @@ const App = {
   components: {
     NavMenu,
     Search,
+    Spinner,
   },
 };
 

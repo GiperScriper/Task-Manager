@@ -1,9 +1,9 @@
 <template>
 <div class="menu">
   <div class="menu-title">
-    <span>Task Manager</span><button class="menu-expand">&#9776</button>
+    <span>Task Manager</span><button class="menu-expand" @click="toggle">&#9776</button>
   </div>
-  <div>
+  <div v-show="isMenuOpened">
     <ul class="menu-list">
       <li class="menu-element">
         <router-link class="menu-link" :to="{ name: 'dashboard' }">
@@ -42,4 +42,6 @@
   </div>
 </div>
 </template>
+
+<script src="./Menu.js"></script>
 <style lang="scss" src="./menu.scss" scoped></style>

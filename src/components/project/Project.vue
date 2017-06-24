@@ -1,6 +1,5 @@
 <template>
 <div class="projects">
-
   <div class="card" v-for="project in projects">
     <div class="card-project" v-show="project._id !== currentProject._id">
       <div class="card-header">
@@ -23,7 +22,7 @@
       </div>
     </div>
 
-    <transition name="fade" v-on:after-leave="afterLeave">
+    <transition name="fade" v-on:after-leave="afterLeaveDeleteDialog">
       <div class="card-delete" v-if="project._id === currentProject._id && isOpenDeleteDialog">
         <div class="card-warning">
           <p>
@@ -51,7 +50,7 @@
       <icon name="plus-circle" class="card-plus" scale="5"></icon>
     </button>
 
-    <transition name="fade" v-on:after-leave="afterLeave">
+    <transition name="fade" v-on:after-leave="afterLeaveCreateDialog">
       <div class="card-create" v-show="isOpenAddDialog">
         <form class="card-form" v-on:submit.prevent="createProject()" novalidate>
           <div class="card-input">

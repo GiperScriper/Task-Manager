@@ -12,11 +12,13 @@ const state = {
     },
   },
   currentState: '',
+  isLoading: false,
 };
 
 const getters = {
   user: state => state.user,
   currentState: state => state.currentState,
+  isLoading: state => state.isLoading,
 };
 
 const mutations = {
@@ -29,12 +31,18 @@ const mutations = {
   signIn(state) {
     state.user.isAuthenticated = true;
   },
+  setLoading(state, flag) {
+    state.isLoading = flag;
+  },
 };
 
 const actions = {
   setUser({ commit }, payload) {
     commit('signIn');
     commit('setUser', payload);
+  },
+  setLoading({ commit }, payload) {
+    commit('setLoading', payload);
   },
 };
 
