@@ -25,11 +25,11 @@ Vue.http.interceptors.push((request, next) => {
   }
 
   next((response) => {
-    if (request.url === response.url && request.headers.map.spinner) {
-      store.dispatch('setLoading', false);
-    }
     if (response.status === 401) {
       Auth.logout(router);
+    }
+    if (request.url === response.url && request.headers.map.spinner) {
+      store.dispatch('setLoading', false);
     }
   });
 });

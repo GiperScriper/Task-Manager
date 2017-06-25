@@ -1,4 +1,4 @@
-import urls from '../../../config';
+import { urls } from '../../../config';
 
 class Auth {
   static login(ctx, credentials) {

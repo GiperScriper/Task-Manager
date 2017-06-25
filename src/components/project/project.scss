@@ -9,7 +9,7 @@
 
 	&-title {
 		font-family: Lato Regular;
-		font-size: 2rem;
+		font-size: 28px;
 		color: rgba($black, .4);
 		margin-bottom: 2rem;
 	}
@@ -254,7 +254,7 @@ button {
 		border-top: 3px solid $light-blue;
 		border-bottom: 1px solid rgba($black, .15);
 		border-top-left-radius: 2px;
-		border-top-right-radius: 2px;
+	    border-top-right-radius: 2px;
 	}
 
 	&-date {

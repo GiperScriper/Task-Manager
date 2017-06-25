@@ -10,8 +10,14 @@ const urls = {
   projectsId: '/projects/:id',
 };
 
+const colors = ['#3695ff', '#FBBC05', '#34A853', 'red'];
+
+
 Object.keys(urls).map((key) => {
   urls[key] = `${domain}${urls[key]}`;
 });
 
-export default urls;
+export {
+  urls,
+  colors,
+};

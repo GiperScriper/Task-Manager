@@ -1,10 +1,15 @@
 import moment from 'moment';
-import urls from '../../config';
+import { urls, colors } from '../../config';
+
 
 async function getProjects() {
   try {
     const response = await this.$http.get(urls.projects, { headers: { spinner: 'true' } });
-    this.projects = response.body.data;
+    this.projects = response.body.data.map((item) => {
+      const modifiedItem = item;
+      modifiedItem.borderTopColor = this.getRandomColor();
+      return modifiedItem;
+    });
   } catch (error) {
     // Handle error, show notification
   }
@@ -80,6 +85,10 @@ const Project = {
     },
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
+    },
+    getRandomColor() {
+      const randomNumber = Math.floor(Math.random() * colors.length);
+      return colors[randomNumber];
     },
   },
   computed: {

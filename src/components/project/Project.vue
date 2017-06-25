@@ -1,13 +1,13 @@
 <template>
 <div class="projects" v-if="!isLoading">
   <h2 class="projects-title">
-    <icon name="circle" class="card-users" scale="1"></icon> Projects ({{ projects.length }})
+    <icon name="circle" class="card-users" scale=".8" :style="{ 'color': '#3695ff' }"></icon> Projects ({{ projects.length }})
   </h2>
 
   <div class="projects-cards">
     <div class="card" v-for="project in projects">
       <div class="card-project" v-show="project._id !== currentProject._id">
-        <div class="card-header">
+        <div class="card-header" :style="{ 'border-top-color': project.borderTopColor }">
           <h3 :title="project.title">{{ project.title }}</h3>
           <div class="card-control" v-if="project._creator === user._id">
             <button class="card-icon" type="button" name="button" @click="showDeleteDialog(project)">
