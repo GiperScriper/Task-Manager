@@ -31,7 +31,7 @@ async function deleteProject() {
     const index = this.projects.indexOf(this.currentProject);
     this.projects.splice(index, 1);
     this.currentProject = {};
-    this.closeAddDialog();
+    this.closeDeleteDialog();
   } catch (error) {
   // Handle error
   }
@@ -87,8 +87,8 @@ const Project = {
       this.isOpenDeleteDialog = false;
     },
     getRandomColor() {
-      const randomNumber = Math.floor(Math.random() * colors.length);
-      return colors[randomNumber];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      return colors[randomIndex];
     },
   },
   computed: {

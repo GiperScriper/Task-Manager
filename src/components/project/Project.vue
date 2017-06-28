@@ -10,7 +10,7 @@
         <div class="card-header" :style="{ 'border-top-color': project.borderTopColor }">
           <h3 :title="project.title">{{ project.title }}</h3>
           <div class="card-control" v-if="project._creator === user._id">
-            <button class="card-icon" type="button" name="button" @click="showDeleteDialog(project)">
+            <button class="card-icon" type="button" name="button" @click="showDeleteDialog(project)" v-if="!isOpenDeleteDialog">
               <icon name="trash-o" class="card-close" scale="1"></icon>
             </button>
           </div>
