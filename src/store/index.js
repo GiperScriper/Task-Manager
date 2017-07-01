@@ -51,7 +51,7 @@ const actions = {
   },
   setMenuState({ commit }, payload) {
     commit('setMenuState', payload);
-  }
+  },
 };
 
 const store = new Vuex.Store({

@@ -1,15 +1,17 @@
 import moment from 'moment';
-import urls from '../../config';
+import { urls, colors } from '../../config';
+
 
 async function getProjects() {
   try {
-    this.loading = true;
-    const response = await this.$http.get(urls.projects);
-    this.projects = response.body.data;
+    const response = await this.$http.get(urls.projects, { headers: { spinner: 'true' } });
+    this.projects = response.body.data.map((item) => {
+      const modifiedItem = item;
+      modifiedItem.borderTopColor = this.getRandomColor();
+      return modifiedItem;
+    });
   } catch (error) {
     // Handle error, show notification
-  } finally {
-    this.loading = false;
   }
 }
 
@@ -29,7 +31,7 @@ async function deleteProject() {
     const index = this.projects.indexOf(this.currentProject);
     this.projects.splice(index, 1);
     this.currentProject = {};
-    this.closeAddDialog();
+    this.closeDeleteDialog();
   } catch (error) {
   // Handle error
   }
@@ -53,7 +55,6 @@ const Project = {
       isOpenDeleteDialog: false,
       dateFormat: 'D MMM, YYYY',
       lengthLimit: 30,
-      loading: false,
     };
   },
   methods: {
@@ -85,10 +86,17 @@ const Project = {
     closeDeleteDialog() {
       this.isOpenDeleteDialog = false;
     },
+    getRandomColor() {
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      return colors[randomIndex];
+    },
   },
   computed: {
     user() {
       return this.$store.getters.user.data;
+    },
+    isLoading() {
+      return this.$store.getters.isLoading;
     },
     isProjectEmpty() {
       return !(!!this.project.title && !!this.project.description);
@@ -103,11 +111,6 @@ const Project = {
     },
     date(date, format) {
       return moment(date).format(format);
-    },
-  },
-  watch: {
-    loading(loadingState) {
-      this.$store.dispatch('setLoading', loadingState);
     },
   },
 };
