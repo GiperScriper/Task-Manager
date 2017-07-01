@@ -1,13 +1,26 @@
 @import '../../../assets/scss/_build.scss';
 
-.loader,
-.loader:after {
+.loader {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255,255,255, .5);
+}
+
+.loader-spinner {
   border-radius: 50%;
   width: 10em;
   height: 10em;
 }
 
-.loader {
+.loader-spinner {
   margin: 0 auto;
   font-size: 10px;
   position: relative;
@@ -23,11 +36,12 @@
   animation: load8 1.1s infinite linear;
 }
 
-.loader {
+.loader-spinner {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 @-webkit-keyframes load8 {

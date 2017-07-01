@@ -13,6 +13,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
     margin-top: 2rem;
 
     &--logout {
@@ -45,10 +46,11 @@
   }
 
   &-icon {
-    font-size: .8rem;
-    color: $light-grey;
     position: absolute;
     left: 25px;
+
+    font-size: .8rem;
+    color: $light-grey;
   }
 }
 
@@ -57,13 +59,15 @@
 
   &::before {
     content: "";
-    width: 4px;
-    height: 25px;
     position: absolute;
     top: 50%;
     left: 0;
+
+    width: 4px;
+    height: 25px;
+    transform: translateY(-50%);
+
     background: $login-bg;
     box-shadow: 0px 0px 2px 1px rgba($light-blue, .5);
-    transform: translateY(-50%);
   }
 }

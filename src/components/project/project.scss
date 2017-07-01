@@ -99,7 +99,7 @@ button {
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			max-width: 140px;
+			max-width: 190px;
 		}
 	}
 
@@ -212,10 +212,22 @@ button {
 		}
 	}
 
+  &-delete__btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+
 	&-close,
 	&-edit {
-
 		color: #555;
+
 		cursor: pointer;
 		@include transition-animation;
 
@@ -224,37 +236,25 @@ button {
 		}
 	}
 
-	&-edit {
-		position: absolute;
-		top: 49%;
-		transform: translateY(-50%);
-		right: 35px;
-
-		&:hover {
-			color: $light-blue;
-		}
-	}
-
 	&:hover &-check {
 		opacity: 1;
 	}
 
 	&-header {
+    position: relative;
+
 		@include flexbox;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: center;
-
-		font-family: Lato Black;
-		color: rgba($black, .8);
-		text-align: left;
-
-		position: relative;
-
 
 		border-top: 3px solid $light-blue;
 		border-bottom: 1px solid rgba($black, .15);
 		border-top-left-radius: 2px;
-	    border-top-right-radius: 2px;
+	  border-top-right-radius: 2px;
+
+    font-family: Lato Black;
+    color: rgba($black, .8);
+    text-align: left;
 	}
 
 	&-date {
@@ -291,7 +291,7 @@ button {
 		line-height: 1.3;
 		overflow: hidden;
 		text-overflow: ellipsis;
-        word-break: break-all;
+    word-break: break-all;
 
 		&:hover {
 			overflow: auto;
@@ -302,24 +302,28 @@ button {
 		@include flexbox;
 		justify-content: space-between;
 		align-items: center;
-		border-top: 1px solid rgba($black, .15);
 		padding-top: 10px;
+
+		border-top: 1px solid rgba($black, .15);
 
 		&--create {
 			@include flexbox;
 			justify-content: space-between;
-			border: 0;
 			padding-left: 0;
 			padding-right: 0;
+
+			border: 0;
 		}
 	}
 
 	&-calendar,
 	&-users {
 		position: relative;
-		vertical-align: middle;
 		top: -1px;
+
 		margin-right: 5px;
+
+		vertical-align: middle;
 	}
 
 	&-members {
@@ -363,7 +367,9 @@ button {
 	}
 
 	&-warning {
+		border-top: 3px solid transparent;
 		background-color: rgb(252, 252, 215);
+
 		font-size: .7rem;
 		line-height: 1.2;
 	}

@@ -4,29 +4,28 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+  z-index: 1030;
 
 	@include flexbox;
-	border-bottom: 1px solid rgba($black, .1);
-
+  flex-wrap: nowrap;
 	width: 100%;
 
 	background-color: rgb(238, 238, 238);
-
-	z-index: 1030;
+  border-bottom: 1px solid rgba($black, .1);
 
 	&-title {
     @include flexbox;
     justify-content: flex-start;
     align-items: center;
+    min-width: 200px;
+    max-width: 200px;
     height: 60px;
+    padding: 0 .5rem;
 
     font-family: "Lato Regular";
     color: $white;
 
-    padding: 0 .5rem;
     background: $login-bg;
-		min-width: 200px;
-		max-width: 200px;
 
     span {
       margin-top: 2px;
@@ -72,7 +71,7 @@
 		&:focus {
 			border: 0;
 			outline: 0;
-			background-color: transparent;
+			background-color: white;
 		}
 
 		&:focus::placeholder {
@@ -95,6 +94,33 @@
 		padding: 0;
 		padding-left: .5rem;
 	}
+
+    &-title,
+    &-search,
+    &-profile {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    &-title {
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 100%;
+      max-width: 200px;
+    }
+
+    &-search {
+        width: 100%;
+    }
+
+    &-profile {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 260px;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 }
 
 .profile {
