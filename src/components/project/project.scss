@@ -284,20 +284,17 @@ button {
 	}
 
 	&-body {
+		height: 100px;
+
 		color: rgba($black, .6);
 		font-size: .8rem;
 		line-height: 1.3;
-		height: 100px;
 		overflow: hidden;
 		text-overflow: ellipsis;
+        word-break: break-all;
 
 		&:hover {
 			overflow: auto;
-		}
-
-		p {
-			overflow: hidden;
-			text-overflow: ellipsis;
 		}
 	}
 

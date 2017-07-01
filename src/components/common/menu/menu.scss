@@ -13,7 +13,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
     margin-top: 2rem;
 
     &--logout {
@@ -27,17 +26,17 @@
   }
 
   &-link {
+    position: relative;
+
+    display: block;
+    padding: .7rem 0;
+    padding-left: 3rem;
+
     font-family: "Lato Bold";
     font-size: .9rem;
     color: $light-grey;
     text-transform: uppercase;
     text-decoration: none;
-
-    padding: .7rem 0;
-    padding-left: 3rem;
-
-    display: block;
-    position: relative;
 
     &:hover,
     &:hover .menu-icon-logout {
