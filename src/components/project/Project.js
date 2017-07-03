@@ -78,7 +78,8 @@ const Project = {
         description: '',
       };
     },
-    showDeleteDialog(project) {
+    showDeleteDialog(project, event) {
+      event.stopPropagation();
       this.projectNameConfirmation = '';
       this.currentProject = project;
       this.isOpenDeleteDialog = true;

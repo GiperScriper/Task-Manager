@@ -5,12 +5,12 @@
   </h2>
 
   <div class="projects-cards">
-    <div class="card" v-for="project in projects" @click="openProjectDetailPage(project._id)">
-      <div class="card-project" v-show="project._id !== currentProject._id">
+    <div class="card" v-for="project in projects">
+      <div class="card-project" v-show="project._id !== currentProject._id" @click="openProjectDetailPage(project._id)">
         <div class="card-header" :style="{ 'border-top-color': project.borderTopColor }">
           <h3 :title="project.title">{{ project.title }}</h3>
           <div class="card-control" v-if="project._creator === user._id">
-            <button class="card-delete__btn" type="button" name="button" @click="showDeleteDialog(project)" v-if="!isOpenDeleteDialog">
+            <button class="card-delete__btn" type="button" name="button" @click="showDeleteDialog(project, $event)" v-if="!isOpenDeleteDialog">
               <icon name="trash-o" class="card-icon" scale="1"></icon>
             </button>
           </div>

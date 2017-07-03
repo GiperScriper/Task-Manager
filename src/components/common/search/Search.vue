@@ -2,7 +2,7 @@
   <div class="main_bar">
     <div class="main_bar-title">
       <button class="main_bar-expand" @click="toggle">&#9776</button>
-      <span>Task Manager</span>
+      <span>Notas</span>
     </div>
     <div class="main_bar-search">
       <icon name="search" class="search-icon" scale="1.3"></icon>
