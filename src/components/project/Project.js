@@ -90,6 +90,9 @@ const Project = {
       const randomIndex = Math.floor(Math.random() * colors.length);
       return colors[randomIndex];
     },
+    openProjectDetailPage(id) {
+      this.$router.push({ name: 'projectDetail', params: { id } });
+    },
   },
   computed: {
     user() {

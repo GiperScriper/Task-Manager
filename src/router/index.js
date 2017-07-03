@@ -6,6 +6,7 @@ import store from '../store';
 import Login from '../components/login/Login.vue';
 import Dashboard from '../components/dashboard/Dashboard.vue';
 import Project from '../components/project/Project.vue';
+import ProjectDetail from '../components/projectDetail/ProjectDetail.vue';
 import Settings from '../components/settings/Settings.vue';
 
 Vue.use(VueRouter);
@@ -26,6 +27,12 @@ const routes = [
     path: '/projects',
     name: 'projects',
     component: Project,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/projects/:id',
+    name: 'projectDetail',
+    component: ProjectDetail,
     meta: { requiresAuth: true },
   },
   {

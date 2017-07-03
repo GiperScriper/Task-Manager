@@ -5,7 +5,7 @@
   </h2>
 
   <div class="projects-cards">
-    <div class="card" v-for="project in projects">
+    <div class="card" v-for="project in projects" @click="openProjectDetailPage(project._id)">
       <div class="card-project" v-show="project._id !== currentProject._id">
         <div class="card-header" :style="{ 'border-top-color': project.borderTopColor }">
           <h3 :title="project.title">{{ project.title }}</h3>
