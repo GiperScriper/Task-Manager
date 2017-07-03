@@ -29,11 +29,9 @@
     </ul>
 
     <ul class="menu-list--logout">
-      <li class="menu-element">
-        <router-link class="menu-link" :to="{ name: 'settings' }">
+      <li class="menu-element menu-link" @click="logout">
           <icon name="sign-out" class="menu-icon menu-icon--logout" scale=".9"></icon>
             Logout
-        </router-link>
       </li>
     </ul>
   </div>
