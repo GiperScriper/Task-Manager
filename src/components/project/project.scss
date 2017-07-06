@@ -1,6 +1,7 @@
 @import '../../assets/scss/_build.scss';
 
 .projects {
+  padding: 40px 40px;
 
 	&-cards {
 		@include flexbox;
@@ -25,7 +26,7 @@ button {
 	@include flexbox;
 	justify-content: center;
 	flex-wrap: wrap;
-	flex-basis: 240px;
+  min-width: 240px;
 	max-width: 240px;
 	height: 220px;
 
@@ -46,6 +47,10 @@ button {
 	&:hover .card-icon {
 		opacity: 1;
 	}
+
+  > div {
+    width: 100%;
+  }
 
 	&-icon {
 		opacity: 0;

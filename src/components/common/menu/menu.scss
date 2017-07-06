@@ -39,6 +39,8 @@
     text-transform: uppercase;
     text-decoration: none;
 
+    cursor: pointer;
+
     &:hover,
     &:hover .menu-icon-logout {
       color: $light-blue;
